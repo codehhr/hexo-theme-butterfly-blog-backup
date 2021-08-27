@@ -1,0 +1,105 @@
+class1:
+  class_name: 舍友
+  link_list:
+    1:
+      name: codeAntg
+      link: https://blog.csdn.net/weixin_44745147
+      avatar: https://codehhr.coding.net/p/codehhr/d/images/git/raw/master/avatar/fjh.jpg
+      descr: 那家刀削面不错
+      # 边框大小 默认为0
+      width: 1px
+      # 边框样式 默认 solid
+      style: solid
+      # 背景颜色 默认淡蓝色 #49b1f5
+      color: "#c0c0ff"
+      # 自动旋转 可选值 flash（闪现） link_custom（单色呼吸灯） link_custom1（彩色呼吸灯）
+      custom: link_custom1
+      # 动画时长设定，默认为0
+      time: 4s
+      # name的颜色
+      namecolor: "#ff9191"
+      # descr的颜色
+      descolor: "#ff9191"
+class2:
+  class_name: 致谢
+  link_list:
+    1:
+      name: JerrC
+      link: https://immyw.com
+      avatar: https://codehhr.coding.net/p/codehhr/d/images/git/raw/master/avatar/immyw.png
+      descr: 今日事,今日毕
+      # 边框大小 默认为0
+      width: 1px
+      # 边框样式 默认 solid
+      style: solid
+      # 背景颜色 默认淡蓝色 #49b1f5
+      color: "#60d0ff"
+      # 自动旋转 可选值 flash（闪现） link_custom（单色呼吸灯） link_custom1（彩色呼吸灯）
+      custom: link_custom1
+      # 动画时长设定，默认为0
+      time: 4s
+      # name的颜色
+      namecolor: "#ff9191"
+      # descr的颜色
+      descolor: "#ff9191"
+    2:
+      name: Hexo
+      link: https://hexo.io/zh-tw/
+      avatar: https://codehhr.coding.net/p/codehhr/d/images/git/raw/master/avatar/hexo.svg
+      descr: A fast, simple & powerful blog framework
+      # 边框大小 默认为0
+      width: 1px
+      # 边框样式 默认 solid
+      style: solid
+      # 背景颜色 默认淡蓝色 #49b1f5
+      color: "#c0c0ff"
+      # 自动旋转 可选值 flash（闪现） link_custom（单色呼吸灯） link_custom1（彩色呼吸灯）
+      custom: link_custom
+      # 动画时长设定，默认为0
+      time: 4s
+      # name的颜色
+      namecolor: "#ff9191"
+      # descr的颜色
+      descolor: "#ff9191"
+class3:
+  class_name: 友人
+  link_list:
+    1:
+      name: Chester
+      link:   http://chesterlds.cn
+      avatar: https://codehhr.coding.net/p/codehhr/d/images/git/raw/master/avatar/chester.jpg
+      descr: 
+      # 边框大小 默认为0
+      width: 1px
+      # 边框样式 默认 solid
+      style: solid
+      # 背景颜色 默认淡蓝色 #49b1f5
+      color: "#c0c0ff"
+      # 自动旋转 可选值 flash（闪现） link_custom（单色呼吸灯） link_custom1（彩色呼吸灯）
+      custom: link_custom1
+      # 动画时长设定，默认为0
+      time: 4s
+      # name的颜色
+      namecolor: "#ff9191"
+      # descr的颜色
+      descolor: "#ff9191"
+    2:
+      name: Wangs
+      link: https://wangsss.cn/
+      avatar: https://wangsss.cn/img/avatar.png
+      descr: 不疯魔，不成活 ~
+      # 边框大小 默认为0
+      width: 1px
+      # 边框样式 默认 solid
+      style: solid
+      # 背景颜色 默认淡蓝色 #49b1f5
+      color: "#9d9d9d"
+      # 自动旋转 可选值 flash（闪现） link_custom（单色呼吸灯） link_custom1（彩色呼吸灯）
+      # custom: link_custom1
+      custom: link_custom1
+      # 动画时长设定，默认为0
+      time: 4s
+      # name的颜色
+      namecolor: "0094ff"
+      # descr的颜色
+      descolor: "#ff9191"
