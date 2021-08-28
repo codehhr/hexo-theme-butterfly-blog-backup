@@ -1,8 +1,9 @@
 .DS_Store
 node_modules
-/public
-/dist
-*db.json
+public
+dist
+db.json
+.deploy_git
 
 
 # local env files
