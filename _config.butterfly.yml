@@ -375,6 +375,7 @@ valine:
     mail: 邮箱(会帮您加密)
     link: 网址(https://)
   tagMeta: "不正经博主,小伙伴,访客" # 标签要显示的文字,默认'博主,小伙伴,访客'
+  visitor: true
 
 # waline - A simple comment system with backend support fork from Valine
 # https://waline.js.org/
