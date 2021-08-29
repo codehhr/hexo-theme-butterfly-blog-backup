@@ -5,6 +5,6 @@
 ![hexo version](https://img.shields.io/badge/hexo-5.0+-0e83c)
 ![license](https://img.shields.io/github/license/jerryc127/hexo-theme-butterfly?color=FF5531)
 
-Demo [Saturday_](https://codehhr.cn)
+**Demo [Saturday\_](https://codehhr.cn)**
 
-Based on [hexo-theme-butterfly](https://github.com/jerryc127/hexo-theme-butterfly)
+**Based on 🦋 [hexo-theme-butterfly](https://github.com/jerryc127/hexo-theme-butterfly)**
