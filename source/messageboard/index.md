@@ -5,4 +5,4 @@ top_img: https://codehhr.coding.net/p/codehhr/d/wallpaper/git/raw/master/desktop
 type: messageboard
 ---
 
-## 请 尽 情 胡 言 乱 语 ~
+## 可 以 留 言 嗷 ~
