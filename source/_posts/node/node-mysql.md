@@ -4,7 +4,10 @@ date: 2021-07-16 11:46:10
 top_img: https://codehhr.coding.net/p/codehhr/d/images/git/raw/master/csslayouts/sunrise.jpg
 cover: https://codehhr.coding.net/p/codehhr/d/images/git/raw/master/node/mysql.jpg
 tags:
+  - node
+  - mysql
 categories:
+  - node
 comments:
 ---
 
@@ -71,7 +74,7 @@ function interactingWithDatabase(sql, fun) {
 }
 ```
 
-# 数据库操作 ( CURD )
+# 简单的数据库操作 ( CURD )
 
 ## sql 语句
 

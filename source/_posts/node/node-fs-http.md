@@ -5,8 +5,6 @@ top_img: https://codehhr.coding.net/p/codehhr/d/images/git/raw/master/csslayouts
 cover: https://codehhr.coding.net/p/codehhr/d/images/git/raw/master/node/node.jpg
 tags:
   - node
-  - js
-  - javascript
   - fs
   - http
 categories:
