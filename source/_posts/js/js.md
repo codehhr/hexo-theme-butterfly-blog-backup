@@ -1870,14 +1870,14 @@ valueOf();原始值，获取 1970 年 1 月 1 日至今的毫秒数
 ### (3) 获取日期指定部分
 
 ```js
-getMilliseconds();
-getSeconds(); // 返回 0-59
-getMinutes(); // 返回 0-59
-getHours(); // 返回 0-23
-getDay(); // 返回星期几 0 周日   6 周 6
-getDate(); // 返回当前月的第几天
-getMonth(); // 返回月份，从 0 开始
-getFullYear(); //返回 4 位的年份 如 2016
+date.getMilliseconds();
+date.getSeconds(); // 返回 0-59
+date.getMinutes(); // 返回 0-59
+date.getHours(); // 返回 0-23
+date.getDay(); // 返回星期几 0 周日   6 周 6
+date.getDate(); // 返回当前月的第几天
+date.getMonth(); // 返回月份，从 0 开始
+date.getFullYear(); //返回 4 位的年份 如 2016
 ```
 
 ## 4. Array 对象
@@ -1927,6 +1927,11 @@ console.log(arr1.sort()); // 然而排序后的结果不是咱想要的
 ```js
 arr1.sort(function (a, b) {
   return a - b; // 从小到大排序
+});
+```
+
+```js
+arr1.sort(function (a, b) {
   return b - a; // 从大到小排序
 });
 ```
