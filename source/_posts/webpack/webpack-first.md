@@ -38,7 +38,7 @@ npm init -y
 
 比如按照 `Vue` 框架的目录 , 创建一个 `src` 的子文件夹 , 在 `src` 里面创建一个 `index.js` 和 `data.js` 的文件 , **把 `index.js` 但当作入口文件**
 
-## 文件目录
+## 目录结构
 
 - project
   - src
@@ -76,7 +76,7 @@ npm install webpack webpack-cli -S -D
 
 # 打包为开发(生产)环境
 
-**不同版本的 `webpack` 打包命还不太一样**
+**不同版本的 `webpack` 打包的命令参数还不太一样**
 
 ```bash
 webpack --entry ./src/index.js --mode development
