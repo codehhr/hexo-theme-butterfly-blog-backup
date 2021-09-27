@@ -371,8 +371,8 @@ valine:
     - d33e086a2354ac5d4c6e587be9f9a54b
     - 1d33b40fe1c2fc4b8f2a4ae72e908b41
   metaPlaceholder: # 输入框的背景文字
-    nick: 昵称/QQ号(必填)
-    mail: 邮箱(会帮您加密)
+    nick: 昵称 / QQ号 (必填)
+    mail: 邮箱 (根据QQ号自动填写)
     link: 网址(https://)
   tagMeta: "不正经博主,小伙伴,访客" # 标签要显示的文字,默认'博主,小伙伴,访客'
   visitor: true
@@ -917,8 +917,8 @@ inject:
     - <link rel="stylesheet" href="/css/scrollbar.css"> # 滚动条美化
   bottom:
     - <script src="/js/artitalk.js"></script> # 说说 (自言自语)
-    # - <script src="https://codehhr.cn/js/sidenav.js"></script> # 默认折叠状态
-    # - <script src="https://codehhr.cn/js/valine.js"></script> # valine评论
+    # - <script src="https://codehhr.cn/js/sidenav.js"></script> # 默认折叠状态(此为旧版,已失效)
+    # - <script src="/js/valine.min.js"></script> # valine评论
     # - <script src="https://codehhr.cn/js/jquery.lazyload.js"></script> # 懒加载
     # - <script src="https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js"></script> # valine 评论 backup
     # - <script src="https://codehhr.cn/js/mousesnow.js"></script> # 鼠标雪花
@@ -941,7 +941,7 @@ CDN:
   # comments
   gitalk: https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js
   gitalk_css: https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css
-  valine: https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js
+  valine: https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js
   disqusjs: https://cdn.jsdelivr.net/npm/disqusjs@1/dist/disqus.js
   disqusjs_css: https://cdn.jsdelivr.net/npm/disqusjs@1/dist/disqusjs.css
   utterances: https://utteranc.es/client.js
