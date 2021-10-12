@@ -1,5 +1,5 @@
 ---
-title: 试着用 Js 封装优先级队列
+title: 用 Js 封装优先级队列
 date: 2021-10-12 20:23:10
 updated:
 tags:
