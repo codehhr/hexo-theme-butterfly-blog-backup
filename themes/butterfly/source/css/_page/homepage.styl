@@ -10,7 +10,12 @@
     border-radius: 12px 8px 8px 12px
     background: var(--card-bg)
     box-shadow: var(--card-box-shadow)
-    transition: all .3s
+    visibility: visible;
+    animation-duration: 700ms;
+    animation-delay: 30ms;
+    animation-iteration-count: 1;
+    animation-name: zoomIn
+    transition: all 0.3s
 
     +maxWidth768()
       border-radius: 12px 12px 8px 8px
