@@ -7,6 +7,7 @@ tags:
   - 单链表
 categories:
   - 数据结构
+  - 链表结构
 keywords:
 description:
 top_img: https://codehhr.coding.net/p/codehhr/d/images/git/raw/master/csslayouts/sunrise.jpg

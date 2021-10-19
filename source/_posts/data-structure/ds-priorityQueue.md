@@ -7,6 +7,7 @@ tags:
   - 队列
 categories:
   - 数据结构
+  - 队列结构
 keywords: 优先级队列
 description:
 top_img: https://codehhr.coding.net/p/codehhr/d/images/git/raw/master/csslayouts/sunrise.jpg
