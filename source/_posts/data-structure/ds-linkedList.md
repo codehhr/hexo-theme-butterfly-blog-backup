@@ -27,7 +27,7 @@ copyright_info:
 
 // 封装链表类
 function LinkedList() {
-  // 链表头 (头指针)
+  // 链表头部 (头指针)
   this.head = null;
   // 链表长度
   this.length = 0;

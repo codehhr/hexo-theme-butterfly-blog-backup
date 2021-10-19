@@ -20,9 +20,7 @@ copyright_url:
 copyright_info:
 ---
 
-{% note info no-icon %}
-二叉搜索树的封装
-{% endnote %}
+# 二叉搜索树的封装
 
 ```js
 /*
@@ -30,7 +28,7 @@ copyright_info:
  */
 
 function BinarySearchTree() {
-  // 节点类 (每个节点都包含左右两个子节点以及自身的 key)
+  // 节点类 (每个节点都包含左右两个子节点以及自身的 key & value )
   function Node(obj) {
     this.key = obj.key;
     this.value = obj.value;
@@ -53,7 +51,6 @@ function BinarySearchTree() {
       insert(this.root, newNode);
     }
 
-    // 内部方法: insert
     function insert(currentNode, newNode) {
       // 向左查找
       if (newNode.key < currentNode.key) {
@@ -73,11 +70,90 @@ function BinarySearchTree() {
       }
     }
   };
+
+  // 树的遍历
+  // 1.先序遍历
+  BinarySearchTree.prototype.preorderTraversal = function (handler) {
+    console.log("===== 先序遍历 =====");
+    preorderTraversalNode(this.root);
+    function preorderTraversalNode(currentNode) {
+      if (currentNode != null) {
+        // 传一个回调 handler, 让 handler 处理当前 (经过的节点) 节点的数据
+        handler({ key: currentNode.key, value: currentNode.value });
+
+        // 查找子节点的左子节点
+        preorderTraversalNode(currentNode.left);
+
+        // 查找子节点的右子节点
+        preorderTraversalNode(currentNode.right);
+      }
+    }
+  };
+
+  // 2.中序遍历
+  BinarySearchTree.prototype.inOrderTraversal = function (handler) {
+    console.log("===== 中序遍历 =====");
+    inOrderTraversalNode(this.root);
+    function inOrderTraversalNode(currentNode) {
+      if (currentNode != null) {
+        // 查找子节点的左子节点
+        inOrderTraversalNode(currentNode.left);
+
+        // 让 handler 处理当前 (经过的节点) 节点的数据
+        handler({ key: currentNode.key, value: currentNode.value });
+
+        // 查找子节点的右子节点
+        inOrderTraversalNode(currentNode.right);
+      }
+    }
+  };
+
+  // 3.后序遍历
+  BinarySearchTree.prototype.postorderTraversal = function (handler) {
+    console.log("===== 后序遍历 =====");
+    postorderTraversalNode(this.root);
+    function postorderTraversalNode(currentNode) {
+      if (currentNode != null) {
+        // 查找子节点的左子节点
+        postorderTraversalNode(currentNode.left);
+
+        // 查找子节点的右子节点
+        postorderTraversalNode(currentNode.right);
+
+        // 让 handler 处理当前 (经过的节点) 节点的数据
+        handler({ key: currentNode.key, value: currentNode.value });
+      }
+    }
+  };
 }
 
 // 测试
 let binarySearchTree = new BinarySearchTree();
-binarySearchTree.insertNode({ key: 12, value: "I'm data12 !" });
-binarySearchTree.insertNode({ key: 20, value: "I'm data20 !" });
-console.log(binarySearchTree);
+binarySearchTree.insertNode({ key: 11, value: "I'm 11 !" });
+binarySearchTree.insertNode({ key: 7, value: "I'm 7 !" });
+binarySearchTree.insertNode({ key: 15, value: "I'm 15 !" });
+binarySearchTree.insertNode({ key: 5, value: "I'm 5 !" });
+binarySearchTree.insertNode({ key: 3, value: "I'm 3 !" });
+binarySearchTree.insertNode({ key: 9, value: "I'm 9 !" });
+binarySearchTree.insertNode({ key: 8, value: "I'm 8 !" });
+binarySearchTree.insertNode({ key: 10, value: "I'm 10 !" });
+binarySearchTree.insertNode({ key: 6, value: "I'm 6 !" });
+binarySearchTree.insertNode({ key: 13, value: "I'm 13 !" });
+binarySearchTree.insertNode({ key: 12, value: "I'm 12 !" });
+binarySearchTree.insertNode({ key: 14, value: "I'm 14 !" });
+binarySearchTree.insertNode({ key: 20, value: "I'm 20 !" });
+binarySearchTree.insertNode({ key: 18, value: "I'm 18 !" });
+binarySearchTree.insertNode({ key: 25, value: "I'm 25 !" });
+// 测试先序遍历
+binarySearchTree.preorderTraversal(function (value) {
+  console.log(value);
+});
+// 测试中序遍历
+binarySearchTree.inOrderTraversal(function (value) {
+  console.log(value);
+});
+// 测试后序遍历
+binarySearchTree.postorderTraversal(function (value) {
+  console.log(value);
+});
 ```
