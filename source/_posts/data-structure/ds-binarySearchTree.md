@@ -22,6 +22,10 @@ copyright_info:
 
 # 二叉搜索树的封装
 
+{% note info no-icon %}
+二叉搜索树的封装
+{% endnote %}
+
 ```js
 /*
  * 二叉搜索树的封装
@@ -144,15 +148,12 @@ binarySearchTree.insertNode({ key: 14, value: "I'm 14 !" });
 binarySearchTree.insertNode({ key: 20, value: "I'm 20 !" });
 binarySearchTree.insertNode({ key: 18, value: "I'm 18 !" });
 binarySearchTree.insertNode({ key: 25, value: "I'm 25 !" });
-// 测试先序遍历
 binarySearchTree.preorderTraversal(function (value) {
   console.log(value);
 });
-// 测试中序遍历
 binarySearchTree.inOrderTraversal(function (value) {
   console.log(value);
 });
-// 测试后序遍历
 binarySearchTree.postorderTraversal(function (value) {
   console.log(value);
 });
