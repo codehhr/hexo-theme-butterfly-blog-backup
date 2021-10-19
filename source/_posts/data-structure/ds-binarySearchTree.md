@@ -8,8 +8,8 @@ tags:
 categories:
   - 数据结构
   - 树结构
-keywords:
-description:
+keywords: js 封装二叉搜索树
+description: Js 封装二叉搜索树
 top_img: https://codehhr.coding.net/p/codehhr/d/images/git/raw/master/csslayouts/sunrise.jpg
 cover:
 comments:
@@ -20,9 +20,9 @@ copyright_url:
 copyright_info:
 ---
 
-<!-- {% note info no-icon %}
+{% note info no-icon %}
 二叉搜索树的封装
-{% endnote %} -->
+{% endnote %}
 
 ```js
 /*
@@ -31,8 +31,9 @@ copyright_info:
 
 function BinarySearchTree() {
   // 节点类 (每个节点都包含左右两个子节点以及自身的 key)
-  function Node(key) {
-    this.key = key;
+  function Node(obj) {
+    this.key = obj.key;
+    this.value = obj.value;
     this.left = null;
     this.right = null;
   }
@@ -42,10 +43,9 @@ function BinarySearchTree() {
 
   // 方法
   // 插入数据
-  BinarySearchTree.prototype.insertNode = function (key) {
-    console.log(this);
+  BinarySearchTree.prototype.insertNode = function (obj) {
     // 创建一个节点
-    let newNode = new Node(key);
+    let newNode = new Node(obj);
     // 先判断根节点是否存在
     if (this.root == null) {
       this.root = newNode;
@@ -74,4 +74,10 @@ function BinarySearchTree() {
     }
   };
 }
+
+// 测试
+let binarySearchTree = new BinarySearchTree();
+binarySearchTree.insertNode({ key: 12, value: "I'm data12 !" });
+binarySearchTree.insertNode({ key: 20, value: "I'm data20 !" });
+console.log(binarySearchTree);
 ```
