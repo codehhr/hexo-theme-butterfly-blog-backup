@@ -129,9 +129,39 @@ function BinarySearchTree() {
       }
     }
   };
+
+  // 寻找最值
+  // 寻找最大值
+  BinarySearchTree.prototype.max = function () {
+    // 获取根节点
+    let currentNode = this.root;
+    // 默认 value 值
+    let value = null;
+    // 一直向右查找,直到节点的右子节点为 null, 当前节点就是最大值
+    while (currentNode.right != null) {
+      value = currentNode.value;
+      currentNode = currentNode.right;
+    }
+    return { key: currentNode.key, value };
+  };
+
+  // 寻找最小值
+  BinarySearchTree.prototype.min = function () {
+    // 获取根节点
+    let currentNode = this.root;
+    // 默认 value 值
+    let value = null;
+    // 一直向左查找,直到节点的左子节点为 null, 当前节点就是最小值
+    while (currentNode.left != null) {
+      value = currentNode.value;
+      currentNode = currentNode.left;
+    }
+    return { key: currentNode.key, value };
+  };
 }
 
 // 测试
+
 let binarySearchTree = new BinarySearchTree();
 binarySearchTree.insertNode({ key: 11, value: "I'm 11 !" });
 binarySearchTree.insertNode({ key: 7, value: "I'm 7 !" });
@@ -157,4 +187,7 @@ binarySearchTree.inOrderTraversal(function (value) {
 binarySearchTree.postorderTraversal(function (value) {
   console.log(value);
 });
+
+console.log(binarySearchTree.max());
+console.log(binarySearchTree.min());
 ```

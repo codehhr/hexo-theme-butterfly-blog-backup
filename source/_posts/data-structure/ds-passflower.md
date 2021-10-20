@@ -29,8 +29,8 @@ copyright_info:
 /* 
   击鼓传花
 */
-// 创建队列结构
 
+// 创建队列结构
 function Queue() {
   this.queue = [];
   // 队尾添加新元素
