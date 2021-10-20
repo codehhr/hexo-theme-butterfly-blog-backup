@@ -912,12 +912,12 @@ css_prefix: true
 inject:
   head:
     - <link rel="stylesheet" href="/css/cursor.css"> # cursor
-    - <link rel="stylesheet" href="/css/lantern.css">
+    # - <link rel="stylesheet" href="/css/lantern.css"> # lantern
     # - <link rel="stylesheet" href="/css/flink.css"> # flink
     # - <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@master/Hexo/css/flink.min.css"> # flink_backup
     # - <link rel="stylesheet" href="/css/footergradient.css"> # footer gradient
     # - <link rel="stylesheet" href="/css/scrollbar.css"> # 滚动条美化
-    - <link rel="stylesheet" href="/css/animate.min.css">
+    - <link rel="stylesheet" href="/css/animate.min.css"> # animate
   bottom:
     - <script src="/js/artitalk.js"></script> # 说说 (自言自语)
     - <script src="/js/formatted.js"></script> # format Animated
