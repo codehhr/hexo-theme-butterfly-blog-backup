@@ -625,7 +625,7 @@ ClickShowText:
 
 # Default display mode
 # light (default) / darker
-display_mode: dark
+display_mode: light
 
 # Beautify (美化页面)
 beautify:
