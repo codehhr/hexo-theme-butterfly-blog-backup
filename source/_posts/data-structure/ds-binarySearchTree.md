@@ -38,7 +38,7 @@ copyright_info:
 
 function BinarySearchTree() {
   // 节点类 (每个节点都包含左右两个子节点以及自身的 key & value )
-  function Node(obj) {
+  function Node(obj = {}) {
     this.key = obj.key;
     this.value = obj.value;
     this.left = null;
@@ -50,31 +50,31 @@ function BinarySearchTree() {
 
   // 方法
   // 插入数据
-  BinarySearchTree.prototype.insertNode = function (obj) {
+  BinarySearchTree.prototype.insert = function (obj) {
     // 创建一个节点
     let newNode = new Node(obj);
     // 先判断根节点是否存在
     if (this.root == null) {
       this.root = newNode;
     } else {
-      insert(this.root, newNode);
+      insertNode(this.root, newNode);
     }
 
-    function insert(currentNode, newNode) {
+    function insertNode(currentNode, newNode) {
       // 向左查找
       if (newNode.key < currentNode.key) {
         // 找到 currentNode 的左子节点为 null 时放入
         if (currentNode.left == null) {
           currentNode.left = newNode;
         } else {
-          insert(currentNode.left, newNode);
+          insertNode(currentNode.left, newNode);
         }
       } else {
         // 向右查找
         if (currentNode.right == null) {
           currentNode.right = newNode;
         } else {
-          insert(currentNode.right, newNode);
+          insertNode(currentNode.right, newNode);
         }
       }
     }
@@ -95,6 +95,8 @@ function BinarySearchTree() {
 
         // 查找子节点的右子节点
         preorderTraversalNode(currentNode.right);
+      } else {
+        return null;
       }
     }
   };
@@ -113,6 +115,8 @@ function BinarySearchTree() {
 
         // 查找子节点的右子节点
         inOrderTraversalNode(currentNode.right);
+      } else {
+        return null;
       }
     }
   };
@@ -131,6 +135,8 @@ function BinarySearchTree() {
 
         // 让 handler 处理当前 (经过的节点) 节点的数据
         handler({ key: currentNode.key, value: currentNode.value });
+      } else {
+        return null;
       }
     }
   };
@@ -189,6 +195,8 @@ function BinarySearchTree() {
   // 层序遍历方法 2
   BinarySearchTree.prototype.levelTraversal = function levelTraversal() {
     let result = []; // 最后输出的多维数组
+    let length = 0;
+    let item = new Node();
     if (!this.root) {
       return result;
     } else {
@@ -196,9 +204,10 @@ function BinarySearchTree() {
       layer.push(this.root); // 把根节点作为第一层放进数组
       while (layer.length != 0) {
         result.push([]); // 添加新的一层
-        for (let i = 0; i < layer.length; i++) {
-          let item = layer.shift(); // 层虚遍历从左到右
-          result[result.length - 1].push(item.value); // 把这个节点的值, 添加到当前层的数组里面
+        length = layer.length; // 下面 shift 会改变 layer 数组长度, 所以先保存下
+        for (let i = 0; i < length; i++) {
+          item = layer.shift(); // 层虚遍历从左到右
+          result[result.length - 1].push(item.key); // 把这个节点的值, 添加到当前层的数组里面
           // 将下一层的节点加入 layer
           if (item.left) {
             layer.push(item.left);
@@ -244,6 +253,112 @@ function BinarySearchTree() {
     }
     return false;
   };
+
+  // 删除节点
+  BinarySearchTree.prototype.remove = function (key) {
+    if (!key) return false;
+    // 先寻找要删除的节点
+    // 涉及到当前节点和父节点, 以及具体关系 ( 是左子节点还是右子节点 )
+    let parentNode = this.root;
+    let currentNode = this.root;
+    let isLeftChild = true;
+
+    while (key != currentNode.key) {
+      parentNode = currentNode;
+      if (key < currentNode.key) {
+        isLeftChild = true;
+        currentNode = currentNode.left;
+      } else {
+        isLeftChild = false;
+        currentNode = currentNode.right;
+      }
+      // 没找到要删除的节点
+      if (!currentNode) {
+        return false;
+      }
+    }
+
+    // while 循环结束, 已找到要删除的节点, 下面分几种情况
+    // 1. 要删除的节点是叶子节点
+    if (currentNode.left == null && currentNode.right == null) {
+      if (currentNode == this.root) {
+        this.root = null;
+      } else {
+        // 判断当前节点和父节点的关系
+        if (isLeftChild) {
+          parentNode.left = null;
+        } else {
+          parentNode.right = null;
+        }
+      }
+    }
+    // 2. 要删除的节点只有一个子节点 ( 只有左子节点 )
+    else if (!currentNode.right) {
+      if (currentNode == this.root) {
+        this.root == currentNode.left;
+      }
+      // 判断当前节点和父节点的关系
+      else if (isLeftChild) {
+        parentNode.left = currentNode.left;
+      } else {
+        parentNode.right = currentNode.left;
+      }
+    }
+    // 3. 要删除的节点只有一个子节点 ( 只有右子节点 )
+    else if (!currentNode.left) {
+      if (currentNode == this.root) {
+        this.root == currentNode.left;
+      }
+      // 判断当前节点和父节点的关系
+      else if (isLeftChild) {
+        parentNode.left = currentNode.right;
+      } else {
+        parentNode.right = currentNode.right;
+      }
+    }
+    // 4. 要删除的节点有两个子节点
+    else {
+      // 通过找规律发现, 该节点即在左子树中找最大的值 或者 在右子树中找最小的值
+      // By the way, it's fucking complicated !
+      // 有两种方案, 这里只展示向删除节点的左子树方向查找
+
+      if (currentNode == this.root) this.root = null;
+
+      let candidateNode = currentNode.left; // 初始候选替补节点
+      let candidateParentNode = currentNode.left; // 初始候选替补节点的父节点
+      // 寻找合适的节点
+      while (candidateNode.right) {
+        candidateParentNode = candidateNode;
+        candidateNode = candidateNode.right;
+      }
+      // 如果候选节点没有右子树, 则当前节点就是最终替补节点
+      if (candidateNode == candidateParentNode) {
+        candidateNode.right = currentNode.right;
+        if (isLeftChild) {
+          parentNode.left = candidateNode;
+        } else {
+          parentNode.right = candidateNode;
+        }
+      }
+      // 如果候选节点有右子树
+      else {
+        // 再判断是否有左子树 (隔代)
+        if (candidateNode.left) {
+          candidateParentNode.right = candidateNode.left;
+        } else {
+          candidateParentNode.right = null;
+          candidateNode.left = currentNode.left;
+          candidateNode.right = currentNode.right;
+          if (isLeftChild) {
+            parentNode.left = candidateNode;
+          } else {
+            parentNode.right = candidateNode;
+          }
+        }
+      }
+    }
+    return true;
+  };
 }
 
 /*
@@ -252,21 +367,29 @@ function BinarySearchTree() {
  * */
 
 let binarySearchTree = new BinarySearchTree();
-binarySearchTree.insertNode({ key: 11, value: "I'm 11 !" });
-binarySearchTree.insertNode({ key: 7, value: "I'm 7 !" });
-binarySearchTree.insertNode({ key: 15, value: "I'm 15 !" });
-binarySearchTree.insertNode({ key: 5, value: "I'm 5 !" });
-binarySearchTree.insertNode({ key: 3, value: "I'm 3 !" });
-binarySearchTree.insertNode({ key: 9, value: "I'm 9 !" });
-binarySearchTree.insertNode({ key: 8, value: "I'm 8 !" });
-binarySearchTree.insertNode({ key: 10, value: "I'm 10 !" });
-binarySearchTree.insertNode({ key: 6, value: "I'm 6 !" });
-binarySearchTree.insertNode({ key: 13, value: "I'm 13 !" });
-binarySearchTree.insertNode({ key: 12, value: "I'm 12 !" });
-binarySearchTree.insertNode({ key: 14, value: "I'm 14 !" });
-binarySearchTree.insertNode({ key: 20, value: "I'm 20 !" });
-binarySearchTree.insertNode({ key: 18, value: "I'm 18 !" });
-binarySearchTree.insertNode({ key: 25, value: "I'm 25 !" });
+binarySearchTree.insert({ key: 11, value: "I'm 11 !" });
+binarySearchTree.insert({ key: 7, value: "I'm 7 !" });
+binarySearchTree.insert({ key: 15, value: "I'm 15 !" });
+binarySearchTree.insert({ key: 5, value: "I'm 5 !" });
+binarySearchTree.insert({ key: 3, value: "I'm 3 !" });
+binarySearchTree.insert({ key: 9, value: "I'm 9 !" });
+binarySearchTree.insert({ key: 8, value: "I'm 8 !" });
+binarySearchTree.insert({ key: 10, value: "I'm 10 !" });
+binarySearchTree.insert({ key: 13, value: "I'm 13 !" });
+binarySearchTree.insert({ key: 12, value: "I'm 12 !" });
+binarySearchTree.insert({ key: 14, value: "I'm 14 !" });
+binarySearchTree.insert({ key: 20, value: "I'm 20 !" });
+binarySearchTree.insert({ key: 18, value: "I'm 18 !" });
+binarySearchTree.insert({ key: 25, value: "I'm 25 !" });
+binarySearchTree.insert({ key: 19, value: "I'm 19 !" });
+//
+//                            11
+//                  7                     15
+//            5         9             13      20
+//        3           8  10         12 14   18   25
+//                                           19
+//
+
 // 先序
 // binarySearchTree.preorderTraversal(function (value) {
 //   console.log(value);
@@ -301,6 +424,9 @@ binarySearchTree.insertNode({ key: 25, value: "I'm 25 !" });
 // console.log(binarySearchTree.search(20));
 // console.log(binarySearchTree.search(18));
 // console.log(binarySearchTree.search(25));
+console.log(binarySearchTree.levelTraversal());
+console.log(binarySearchTree.remove(11));
+console.log(binarySearchTree.levelTraversal());
 ```
 
 {% endhideToggle %}
@@ -320,7 +446,7 @@ function BinarySearchTree() {
 # 创建节点类, 用于承载每个节点
 
 ```js
-function Node(obj) {
+function Node(obj = {}) {
   this.key = obj.key;
   this.value = obj.value;
   this.left = null;
@@ -382,6 +508,8 @@ BinarySearchTree.prototype.preorderTraversal = function (handler) {
 
       // 查找子节点的右子节点
       preorderTraversalNode(currentNode.right);
+    } else {
+      return null;
     }
   }
 };
@@ -404,6 +532,8 @@ BinarySearchTree.prototype.inOrderTraversal = function (handler) {
 
       // 查找子节点的右子节点
       inOrderTraversalNode(currentNode.right);
+    } else {
+      return null;
     }
   }
 };
@@ -426,6 +556,8 @@ BinarySearchTree.prototype.postorderTraversal = function (handler) {
 
       // 让 handler 处理当前 (经过的节点) 节点的数据
       handler({ key: currentNode.key, value: currentNode.value });
+    } else {
+      return null;
     }
   }
 };
@@ -575,32 +707,31 @@ BinarySearchTree.prototype.search = function (key) {
 ```js
 // 删除节点
 BinarySearchTree.prototype.remove = function (key) {
+  if (!key) return false;
   // 先寻找要删除的节点
   // 涉及到当前节点和父节点, 以及具体关系 ( 是左子节点还是右子节点 )
   let parentNode = this.root;
   let currentNode = this.root;
-  // 默认左子节点
   let isLeftChild = true;
+
   while (key != currentNode.key) {
-    if (currentNode) {
-      parentNode = currentNode;
-      if (key < currentNode.key) {
-        isLeftChild = true;
-        currentNode = currentNode.left;
-      } else {
-        isLeftChild = false;
-        currentNode = currentNode.right;
-      }
+    parentNode = currentNode;
+    if (key < currentNode.key) {
+      isLeftChild = true;
+      currentNode = currentNode.left;
+    } else {
+      isLeftChild = false;
+      currentNode = currentNode.right;
     }
     // 没找到要删除的节点
-    else {
+    if (!currentNode) {
       return false;
     }
   }
 
   // while 循环结束, 已找到要删除的节点, 下面分几种情况
   // 1. 要删除的节点是叶子节点
-  if (!currentNode.left && !currentNode.right) {
+  if (currentNode.left == null && currentNode.right == null) {
     if (currentNode == this.root) {
       this.root = null;
     } else {
@@ -613,33 +744,71 @@ BinarySearchTree.prototype.remove = function (key) {
     }
   }
   // 2. 要删除的节点只有一个子节点 ( 只有左子节点 )
-  else if (currentNode.right == null) {
+  else if (!currentNode.right) {
     if (currentNode == this.root) {
       this.root == currentNode.left;
+    }
+    // 判断当前节点和父节点的关系
+    else if (isLeftChild) {
+      parentNode.left = currentNode.left;
     } else {
-      // 判断当前节点和父节点的关系
-      if (isLeftChild) {
-        parentNode.left = currentNode.left;
-      } else {
-        parentNode.right = currentNode.left;
-      }
+      parentNode.right = currentNode.left;
     }
   }
   // 3. 要删除的节点只有一个子节点 ( 只有右子节点 )
-  else if (currentNode.left == null) {
+  else if (!currentNode.left) {
     if (currentNode == this.root) {
       this.root == currentNode.left;
+    }
+    // 判断当前节点和父节点的关系
+    else if (isLeftChild) {
+      parentNode.left = currentNode.right;
     } else {
-      // 判断当前节点和父节点的关系
-      if (isLeftChild) {
-        parentNode.left = currentNode.right;
-      } else {
-        parentNode.right = currentNode.right;
-      }
+      parentNode.right = currentNode.right;
     }
   }
   // 4. 要删除的节点有两个子节点
-  // 情况比较多...未完待续
+  else {
+    // 通过找规律发现, 该节点即在左子树中找最大的值 或者 在右子树中找最小的值
+    // By the way, it's fucking complicated !
+    // 有两种方案, 这里只展示向删除节点的左子树方向查找
+
+    if (currentNode == this.root) this.root = null;
+
+    let candidateNode = currentNode.left; // 初始候选替补节点
+    let candidateParentNode = currentNode.left; // 初始候选替补节点的父节点
+    // 寻找合适的节点
+    while (candidateNode.right) {
+      candidateParentNode = candidateNode;
+      candidateNode = candidateNode.right;
+    }
+    // 如果候选节点没有右子树, 则当前节点就是最终替补节点
+    if (candidateNode == candidateParentNode) {
+      candidateNode.right = currentNode.right;
+      if (isLeftChild) {
+        parentNode.left = candidateNode;
+      } else {
+        parentNode.right = candidateNode;
+      }
+    }
+    // 如果候选节点有右子树
+    else {
+      // 再判断是否有左子树 (隔代)
+      if (candidateNode.left) {
+        candidateParentNode.right = candidateNode.left;
+      } else {
+        candidateParentNode.right = null;
+        candidateNode.left = currentNode.left;
+        candidateNode.right = currentNode.right;
+        if (isLeftChild) {
+          parentNode.left = candidateNode;
+        } else {
+          parentNode.right = candidateNode;
+        }
+      }
+    }
+  }
+  return true;
 };
 ```
 
@@ -651,60 +820,65 @@ BinarySearchTree.prototype.remove = function (key) {
  *
  * */
 
-// 新建实例
 let binarySearchTree = new BinarySearchTree();
-// 插入节点
-binarySearchTree.insertNode({ key: 11, value: "I'm 11 !" });
-binarySearchTree.insertNode({ key: 7, value: "I'm 7 !" });
-binarySearchTree.insertNode({ key: 15, value: "I'm 15 !" });
-binarySearchTree.insertNode({ key: 5, value: "I'm 5 !" });
-binarySearchTree.insertNode({ key: 3, value: "I'm 3 !" });
-binarySearchTree.insertNode({ key: 9, value: "I'm 9 !" });
-binarySearchTree.insertNode({ key: 8, value: "I'm 8 !" });
-binarySearchTree.insertNode({ key: 10, value: "I'm 10 !" });
-binarySearchTree.insertNode({ key: 6, value: "I'm 6 !" });
-binarySearchTree.insertNode({ key: 13, value: "I'm 13 !" });
-binarySearchTree.insertNode({ key: 12, value: "I'm 12 !" });
-binarySearchTree.insertNode({ key: 14, value: "I'm 14 !" });
-binarySearchTree.insertNode({ key: 20, value: "I'm 20 !" });
-binarySearchTree.insertNode({ key: 18, value: "I'm 18 !" });
-binarySearchTree.insertNode({ key: 25, value: "I'm 25 !" });
-// 先序
-binarySearchTree.preorderTraversal(function (value) {
-  console.log(value);
-});
-// 中序
-binarySearchTree.inOrderTraversal(function (value) {
-  console.log(value);
-});
-// 后序
-binarySearchTree.postorderTraversal(function (value) {
-  console.log(value);
-});
-// 层序
-console.log(binarySearchTree.levelTraversal());
-// 最大值
-console.log(binarySearchTree.max());
-// 最小值
-console.log(binarySearchTree.min());
-// 搜索 key
-console.log(binarySearchTree.search(11)); // true
-console.log(binarySearchTree.search(7)); // true
-console.log(binarySearchTree.search(15)); // true
-console.log(binarySearchTree.search(5)); // true
-console.log(binarySearchTree.search(3)); // true
-console.log(binarySearchTree.search(9)); // true
-console.log(binarySearchTree.search(8)); // true
-console.log(binarySearchTree.search(10)); // true
-console.log(binarySearchTree.search(6)); // true
-console.log(binarySearchTree.search(13)); // true
-console.log(binarySearchTree.search(12)); // true
-console.log(binarySearchTree.search(14)); // true
-console.log(binarySearchTree.search(20)); // true
-console.log(binarySearchTree.search(18)); // true
-console.log(binarySearchTree.search(25)); // true
-console.log(binarySearchTree.search(100)); // false
-console.log(binarySearchTree.search(2000)); // false
-```
+binarySearchTree.insert({ key: 11, value: "I'm 11 !" });
+binarySearchTree.insert({ key: 7, value: "I'm 7 !" });
+binarySearchTree.insert({ key: 15, value: "I'm 15 !" });
+binarySearchTree.insert({ key: 5, value: "I'm 5 !" });
+binarySearchTree.insert({ key: 3, value: "I'm 3 !" });
+binarySearchTree.insert({ key: 9, value: "I'm 9 !" });
+binarySearchTree.insert({ key: 8, value: "I'm 8 !" });
+binarySearchTree.insert({ key: 10, value: "I'm 10 !" });
+binarySearchTree.insert({ key: 13, value: "I'm 13 !" });
+binarySearchTree.insert({ key: 12, value: "I'm 12 !" });
+binarySearchTree.insert({ key: 14, value: "I'm 14 !" });
+binarySearchTree.insert({ key: 20, value: "I'm 20 !" });
+binarySearchTree.insert({ key: 18, value: "I'm 18 !" });
+binarySearchTree.insert({ key: 25, value: "I'm 25 !" });
+binarySearchTree.insert({ key: 19, value: "I'm 19 !" });
+//
+//                            11
+//                  7                     15
+//            5         9             13      20
+//        3           8  10         12 14   18   25
+//                                           19
+//
 
-# 未完待续...
+// 先序
+// binarySearchTree.preorderTraversal(function (value) {
+//   console.log(value);
+// });
+// 中序
+// binarySearchTree.inOrderTraversal(function (value) {
+//   console.log(value);
+// });
+// 后序
+// binarySearchTree.postorderTraversal(function (value) {
+//   console.log(value);
+// });
+// 层序
+// console.log(binarySearchTree.levelTraversal());
+// 最大值
+// console.log(binarySearchTree.max());
+// 最小值
+// console.log(binarySearchTree.min());
+// 搜索 key
+// console.log(binarySearchTree.search(11));
+// console.log(binarySearchTree.search(7));
+// console.log(binarySearchTree.search(15));
+// console.log(binarySearchTree.search(5));
+// console.log(binarySearchTree.search(3));
+// console.log(binarySearchTree.search(9));
+// console.log(binarySearchTree.search(8));
+// console.log(binarySearchTree.search(10));
+// console.log(binarySearchTree.search(6));
+// console.log(binarySearchTree.search(13));
+// console.log(binarySearchTree.search(12));
+// console.log(binarySearchTree.search(14));
+// console.log(binarySearchTree.search(20));
+// console.log(binarySearchTree.search(18));
+// console.log(binarySearchTree.search(25));
+console.log(binarySearchTree.levelTraversal());
+console.log(binarySearchTree.remove(11));
+console.log(binarySearchTree.levelTraversal());
+```
