@@ -14,6 +14,10 @@ categories:
   - arch
 ---
 
+{% note warning no-icon %}
+**如果开机进不去桌面, 可以尝试按 `ctrl`+`alt`+`F2 ~ F6`, `Linux` 默认有好几个 `tty` 终端, `F1` 到 `F6` 应该都能进去, 开机默认是 `tty1`**
+{% endnote %}
+
 ![Fuck NVIDIA](https://codehhr.coding.net/p/codehhr/d/images/git/raw/master/nvidia/fuck-nvidia.jpeg)
 
 # So NVIDIA ~ Fuck You !
@@ -22,18 +26,64 @@ categories:
 
 # 1.如果你不打算折腾,只想用 `intel` 核显
 
-```bash
+```sh
 sudo pacman -S xf86-video-intel
 ```
 
 # 2.`intel` + `nvidia` 双显卡切换
 
-```bash
-sudo pacman -S nvidia bbswitch
-sudo pacman -S optimus-manager-qt-kde  (这个应该在 archlinuxcn 源里,我直接 `yay -S optimus-manager-qt`)
+## 方案 (1)
+
+### 安装 大黄蜂 和 依赖
+
+```sh
+sudo pacman -S bumblebee bbswitch nvidia opencl-nvidia lib32-nvidia-utils lib32-opencl-nvidia mesa lib32-mesa-libgl xf86-video-intel
 ```
 
-##### 如果安装 `optimus-manager-qt` 最后提示编译失败,重新安装 `base-devel` 就行,好像是在那里面,也没准是之前我少装了什么包,最后重启
+### 把当前用户添加到 `bumblebee` 组里, `username` 对应当前用户名
+
+```sh
+sudo gpasswd -a username bumblebee
+```
+
+### 配置 `bumblebee`, 编辑下面这个文件
+
+```sh
+/etc/bumblebee/bumblebee.conf
+```
+
+**修改两处**
+
+1. 设置 `Driver` 为 `nvidia`, 大概在第 `22` 行
+
+```sh
+Driver=nvidia
+```
+
+2. 电源管理设置为 `bbswitch`, 默认是 `auto`, 大概在 `57` 行
+
+```sh
+PMMethod=bbswitch
+```
+
+### 设置为开机自启
+
+```sh
+sudo systemctl enable bumblebeed
+```
+
+### 然后重启
+
+重启后在终端输入 `nvidia-smi` 可以显示正在使用 `NVIDIA` 的进程
+
+## 方案 (2)
+
+```sh
+sudo pacman -S nvidia bbswitch
+sudo pacman -S optimus-manager-qt-kde  (这个包好像不在 pacman 管理的源里, 直接用 'AUR', 我直接 'yay -S optimus-manager-qt')
+```
+
+**如果安装 `optimus-manager-qt` 最后提示编译失败,重新安装 `base-devel` 就行,好像是在那里面,也没准是之前我少装了什么包,最后重启**
 
 ### 重启后打开`optimus-manager-qt`
 
