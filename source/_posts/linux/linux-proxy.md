@@ -9,7 +9,7 @@ categories:
 keywords:
 description:
 top_img: https://codehhr.coding.net/p/codehhr/d/images/git/raw/master/csslayouts/sunrise.jpg
-cover:
+cover: https://codehhr.coding.net/p/codehhr/d/images/git/raw/master/i3/archscreenshotcmin.png
 comments:
 copyright:
 copyright_author:
