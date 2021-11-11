@@ -8,8 +8,8 @@ categories:
   - linux
 keywords:
 description:
-top_img: https://codehhr.coding.net/p/codehhr/d/images/git/raw/master/csslayouts/sunrise.jpg
-cover: https://codehhr.coding.net/p/codehhr/d/images/git/raw/master/i3/archscreenshotcmin.png
+top_img: https://codehhr.coding.net/p/codehhr/d/images/git/raw/master/linux/linux.jpg
+cover: 
 comments:
 copyright:
 copyright_author:
