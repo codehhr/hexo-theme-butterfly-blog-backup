@@ -5,10 +5,10 @@ cover: https://codehhr.coding.net/p/codehhr/d/images/git/raw/master/vue/vue.jpg
 date: 2021-02-27 09:54:01
 tags:
   - Vue
-  - Vue脚手架
+  - Vue 脚手架
 categories:
   - Vue
-  - Vue脚手架
+  - Vue 脚手架
 ---
 
 # 一、需要安装 node 环境

@@ -7,7 +7,7 @@ tags:
   - Vue-router
 categories:
   - Vue
-  - Vue基础
+  - Vue 基础
 keywords:
 description:
 top_img: https://codehhr.coding.net/p/codehhr/d/images/git/raw/master/csslayouts/sunrise.jpg
