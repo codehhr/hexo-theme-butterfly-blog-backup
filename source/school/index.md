@@ -4,6 +4,7 @@ date: 2020-08-24 10:34:21
 top_img: https://ae01.alicdn.com/kf/U8f245ae012d54c83a9b856da09ad561dl.jpg
 ---
 
+<!-- example -->
 <!-- {% gallery %}
 ![](https://i.loli.net/2019/12/25/Fze9jchtnyJXMHN.jpg)
 ![](https://i.loli.net/2019/12/25/ryLVePaqkYm4TEK.jpg)
@@ -20,3 +21,13 @@ top_img: https://ae01.alicdn.com/kf/U8f245ae012d54c83a9b856da09ad561dl.jpg
 {% galleryGroup '摄影' '来自好友记录生活的照片' '/school/wangshuai/' https://ae01.alicdn.com/kf/U8f245ae012d54c83a9b856da09ad561dl.jpg %}
 {% galleryGroup '开学花季' '美好时光记录' '/school/blossomseason' https://codehhr.coding.net/p/codehhr/d/kd/git/raw/master/blossomseason/roadsideflowermin.jpg %}
 </div>
+
+{% gallery %}
+![](https://codehhr.coding.net/p/codehhr/d/kd/git/raw/master/mine/kd-1639581293157.jpeg)
+![](https://codehhr.coding.net/p/codehhr/d/kd/git/raw/master/mine/kd-1639581315045.jpeg)
+![](https://codehhr.coding.net/p/codehhr/d/kd/git/raw/master/mine/kd-1639581365785.jpeg)
+![](https://codehhr.coding.net/p/codehhr/d/kd/git/raw/master/mine/kd-1639581384596.jpeg)
+![](https://codehhr.coding.net/p/codehhr/d/kd/git/raw/master/mine/kd-1639581390439.jpeg)
+![](https://codehhr.coding.net/p/codehhr/d/kd/git/raw/master/mine/kd-1639581526050.jpeg)
+![](https://codehhr.coding.net/p/codehhr/d/kd/git/raw/master/mine/kd-IMG_20211207_073127-min.jpg)
+{% endgallery %}
