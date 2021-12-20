@@ -461,7 +461,7 @@ footer:
   owner:
     enable: true
     since: 2018
-  custom_text: In case I don’t see you ... Good afternoon,good evening,and good night.<p><a href='https://beian.miit.gov.cn/'>冀ICP备2020027302号-1</a></p>
+  custom_text: In case I don’t see you ... Good afternoon,good evening,and good night.<p><a href='https://beian.miit.gov.cn/' style='color:#00CCFF'>冀ICP备2020027302号-1</a></p>
   copyright: false # Copyright of theme and framework
 
 # Analysis
