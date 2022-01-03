@@ -4,8 +4,6 @@ date: 2021-09-15 23:33:41
 updated:
 tags:
   - TypeScript
-  - ts
-  - ts-node
 categories:
   - TypeScript
 keywords:
