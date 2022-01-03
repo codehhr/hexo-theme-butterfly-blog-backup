@@ -28,7 +28,7 @@ copyright_info:
 let finished: boolean = false;
 ```
 
-如果用构造函数 Boolean() 创造的对象不是布尔值，而是一个 Boolean 对象，会报错
+如果用构造函数 `Boolean()` 创造的对象不是布尔值，而是一个 `Boolean` 对象，会报错
 
 ```ts
 let finished: boolean = new Boolean(false);
@@ -38,7 +38,7 @@ let finished: boolean = new Boolean(false);
 
 ## number 类型
 
-使用 number 来声明数字类型
+使用 `number` 来声明数字类型
 
 ```ts
 let num: number = 12; // ES6中十进制表示法
@@ -64,7 +64,7 @@ let infinityNumber: number = Infinity;
 
 ## string 类型
 
-使用 string 来声明字符串类型
+使用 `string` 来声明字符串类型
 
 ```ts
 let name: string = "TypeScript";
@@ -72,7 +72,7 @@ let name: string = "TypeScript";
 
 ## void 类型
 
-这个 void 在 js 里没有，在 ts 里表示没有任何返回值的函数:
+这个 `void` 在 `js` 里没有，在 `ts` 里表示没有任何返回值的函数:
 
 ```ts
 function hello(): void {
@@ -80,7 +80,7 @@ function hello(): void {
 }
 ```
 
-**实则发现声明一个 void 类型的变量我感觉没啥用，只能赋值为 undefined：**
+**实则发现声明一个 `void` 类型的变量我感觉没啥用，只能赋值为 `undefined`：**
 
 ```ts
 let nothing: void = undefined;
@@ -95,7 +95,7 @@ let u: undefined = undefined;
 let n: null = null;
 ```
 
-这俩貌似也没啥用，和 void 的区别就是 undefined 和 null 都是所有类型的子类型，也就是 undefined 的类型的变量可以赋值给比如 number 类型
+这俩貌似也没啥用，和 `void` 的区别就是 `undefined` 和 `null` 都是所有类型的子类型，也就是 `undefined` 的类型的变量可以赋值给比如 `number` 类型
 
 ```ts
 let u: undefined = undefined;
@@ -105,7 +105,7 @@ let num: number = u;
 let unum: number = undefined;
 ```
 
-void 类型试了不行
+`void` 类型试了不行
 
 ```ts
 let u: void;
@@ -125,7 +125,7 @@ str = 7;
 // 报错：Type 'number' is not assignable to type 'string'.
 ```
 
-如果是 any 类型是允许被赋值任意类型的
+如果是 `any` 类型是允许被赋值任意类型的
 
 ```ts
 let str: any = "seven";
@@ -136,7 +136,7 @@ str = 7;
 
 # 类型推断
 
-也就是如果没有明确的声明变量的类型，那么 ts 就会推断出一个类型
+也就是如果没有明确的声明变量的类型，那么 `ts` 就会推断出一个类型
 
 ```ts
 let code = "js";
@@ -145,7 +145,7 @@ code = 2;
 // 报错：Type 'number' is not assignable to type 'string'
 ```
 
-如果定义的时候没有赋值，不管之后有没有赋值，都会被推断成 any 类型，也就是不会被类型检查：
+如果定义的时候没有赋值，不管之后有没有赋值，都会被推断成 `any` 类型，也就是不会被类型检查：
 
 ```ts
 // 这样没问题
@@ -173,7 +173,7 @@ code = true;
 // 报错 Type 'boolean' is not assignable to type 'string | number'
 ```
 
-如果访问联合类型的属性的时候，因为 ts 也不确定变量类型，所以是能访问共有的属性或方法
+如果访问联合类型的属性的时候，因为 `ts` 也不确定变量类型，所以是能访问共有的属性或方法
 
 ```ts
 // 因为length不是string和number的共有属性，所以下边这个例子就报错了
@@ -182,7 +182,7 @@ function getLength(something: string | number): number {
 }
 ```
 
-换成共有的属性或方法就可以了，比如.toString()
+换成共有的属性或方法就可以了，比如 `.toString()`
 
 ```ts
 function getLength(something: string | number): string {
@@ -190,7 +190,7 @@ function getLength(something: string | number): string {
 }
 ```
 
-在给联合类型赋值的时候 ts 会推断出一个类型
+在给联合类型赋值的时候 `ts` 会推断出一个类型
 
 ```ts
 let tom: string | number;
@@ -201,12 +201,12 @@ tom = 123;
 console.log(tom.length); // 报错：Property 'length' does not exist on type 'number'
 ```
 
-第一次赋值 "tom" 被推断成了 string 类型，访问 length 属性是没问题的
-第二次赋值 "tom" 被推断成了 number 类型，number 类型没有 length 属性，所以就报错了
+第一次赋值 "tom" 被推断成了 `string` 类型，访问 `length` 属性是没问题的
+第二次赋值 "tom" 被推断成了 `snumber` 类型，`number` 类型没有 `length` 属性，所以就报错了
 
 # 对象类型
 
-用接口 interface 来定义对象类型
+用接口 `interface` 来定义对象类型
 
 ```ts
 interface Persion {
@@ -273,7 +273,7 @@ let tom: Person = {
 ## 任意属性
 
 有时候希望一个接口允许有任意的属性，可以使用如下方式
-使用 [propName: string] 定义了任意属性取 string 类型的值
+使用 `[propName: string]` 定义了任意属性取 string 类型的值
 
 ```ts
 interface Person {
@@ -306,7 +306,7 @@ let tom: Person = {
 
 ## 只读属性
 
-如果希望对象中的一些字段只能在创建的时候被赋值，那么可以用 readonly 定义只读属性：
+如果希望对象中的一些字段只能在创建的时候被赋值，那么可以用 `readonly` 定义只读属性：
 
 ```ts
 interface Person {
@@ -374,7 +374,7 @@ arr.push("6");
 
 ## 数组泛型
 
-用数组泛型 Array<elemType> 来表示数组：
+用数组泛型 `Array<elemType>` 来表示数组：
 
 ```ts
 let arr: Array<number> = [1, 2, 3, 4, 5];
@@ -391,7 +391,7 @@ let arr: numberArray = [1, 2, 3, 4, 5];
 
 ## 类数组
 
-类数组就是伪数组，比如 arguments
+类数组就是伪数组，比如 `arguments`
 
 ```ts
 function sum() {
@@ -400,7 +400,7 @@ function sum() {
 // Type 'IArguments' is missing the following properties from type 'number[]': pop, push, concat, join, and 24 more
 ```
 
-arguments 实际上是一个伪数组，不能用普通的数组的方式来描述，而应该用接口
+`arguments` 实际上是一个伪数组，不能用普通的数组的方式来描述，而应该用接口
 
 ```ts
 function sum() {
@@ -412,7 +412,7 @@ function sum() {
 }
 ```
 
-常用的类数组都有自己的接口定义，如 IArguments, NodeList, HTMLCollection 等：
+常用的类数组都有自己的接口定义，如 `IArguments`, `NodeList`, `HTMLCollection` 等：
 
 ```ts
 function sum() {
@@ -420,7 +420,7 @@ function sum() {
 }
 ```
 
-其中 IArguments 是 TypeScript 中定义好了的类型，实际上就是：
+其中 `IArguments` 是 `TypeScript` 中定义好了的类型，实际上就是：
 
 ```ts
 interface IArguments {
@@ -432,7 +432,7 @@ interface IArguments {
 
 ## any 在数组里的应用
 
-用 any 表示数组中允许出现任意类型
+用 `any` 表示数组中允许出现任意类型
 
 ```ts
 let list: any[] = ["codehhr", "web", 22, { blog: "codehhr.cn" }];
@@ -440,7 +440,7 @@ let list: any[] = ["codehhr", "web", 22, { blog: "codehhr.cn" }];
 
 # 函数类型
 
-js 中可以声明函数或者用表达式的形式，ts 要考虑输入输出个数：
+`js` 中可以声明函数或者用表达式的形式，`ts` 要考虑输入输出个数：
 
 ```ts
 function sum(x: number, y: number): number {
@@ -459,7 +459,7 @@ sum(1); // Expected 2 arguments, but got 1
 
 ## 函数表达式
 
-开始我以为 ts 里函数表达式是这样的：
+开始我以为 `ts` 里函数表达式是这样的：
 
 ```ts
 let sum: number = function (x: number, x: number): number {
@@ -473,7 +473,7 @@ let sum: number = (x: number, x: number): number => {
 };
 ```
 
-实际上发现在 ES6 里 `=>` 表示箭头函数，在 ts 里左边是输入类型，得用小括号括起来，右边是输出类型：
+实际上发现在 `ES6` 里 `=>` 表示箭头函数，在 `ts` 里左边是输入类型，得用小括号括起来，右边是输出类型：
 
 ```ts
 let sum: (x: number, y: number) => number = function (x: number, y: number): number {
@@ -481,7 +481,7 @@ let sum: (x: number, y: number) => number = function (x: number, y: number): num
 };
 ```
 
-感觉虽然比 js 麻烦太多了，但是由牺牲的自由换来了稳定
+感觉虽然比 `js` 麻烦太多了，但是由牺牲的自由换来了稳定
 
 ## 用 interface 来描述函数
 
@@ -497,7 +497,7 @@ let hadFinished: fun = function (str1: string, str2: string) {
 
 ## 可选参数
 
-之前在对象里用 ? 来指定可选参数，我寻思这函数里的参数是不是也这样，果然就是这样
+之前在对象里用 `?` 来指定可选参数，我寻思这函数里的参数是不是也这样，果然就是这样
 
 ```ts
 function getName(firstName: string, lastName?: string): string {
@@ -512,11 +512,11 @@ getName("H"); // H
 getName("H", "HR"); // H HR
 ```
 
-但是有一点限制，可选参数后面不能出现必须参数了，也就是可选参数不能放到前面，例子就不敲了，容易误导自己 😂
+但是有一点限制，可选参数后面不能出现必须参数了，也就是可选参数不能放到前面，例子就不敲了，容易误导自己 🤣
 
 ## 参数默认值
 
-ts 会将有默认值的参数识别为可选参数，这就很合理
+`ts` 会将有默认值的参数识别为可选参数，这就很合理
 
 ```ts
 function getName(lastName: string = "HR", firstName: string = "H"): string {
@@ -542,7 +542,7 @@ pushArr(a, 1, 2, 3);
 ## 重载
 
 重载允许一个函数接受不同数量或类型的参数时，作出不同的处理
-比如，我们需要实现一个函数 reverse，输入数字 123 的时候，输出反转的数字 321，输入字符串 'hello' 的时候，输出反转的字符串 'olleh'。
+比如，我们需要实现一个函数 `reverse`，输入数字 `123` 的时候，输出反转的数字 `321`，输入字符串 `'hello'` 的时候，输出反转的字符串 `'olleh'`。
 
 利用联合类型，可以这么实现：
 
@@ -557,7 +557,7 @@ function reverseSth(x: number | string): number | string | void {
 ```
 
 但是这样就太麻烦了，而且类型都写死了，不够通用
-可以用重载来定义多个 reverseSth 函数类型
+可以用重载来定义多个 `reverseSth` 函数类型
 
 ```ts
 function reverseSth(x: number): number;
@@ -572,9 +572,9 @@ function reverseSth(x: number | string): number | string | void {
 ```
 
 实则这样看起来更麻烦了 😂
-这次重复定义了多次函数 reverseSth，前几次都是函数定义，最后一次是函数实现，在 vscode 中会提示 `+1 overload`
+这次重复定义了多次函数 `reverseSth`，前几次都是函数定义，最后一次是函数实现，在 `vscode` 中会提示 `+1 overload`
 
-而且 TypeScript 会优先从最前面的函数定义开始匹配，所以多个函数定义如果有包含关系，需要优先把精确的定义写在前面
+而且 `TypeScript` 会优先从最前面的函数定义开始匹配，所以多个函数定义如果有包含关系，需要优先把精确的定义写在前面
 
 # 类型断言
 
