@@ -61,7 +61,5 @@ date: 2020-10-24 10:34:21
 ![kd-1639581384596.jpeg](https://codehhr.coding.net/p/codehhr/d/kd/git/raw/master/mine/kd-1639581384596.jpeg)
 ![kd-1639581390439.jpeg](https://codehhr.coding.net/p/codehhr/d/kd/git/raw/master/mine/kd-1639581390439.jpeg)
 ![kd-1639581526050.jpeg](https://codehhr.coding.net/p/codehhr/d/kd/git/raw/master/mine/kd-1639581526050.jpeg)
-![kd-IMG_20211207_073127-min](https://codehhr.coding.net/p/codehhr/d/kd/git/raw/master/mine/kd-IMG_20211207_073127-min.jpg)
+![离开科大去北京实习的早上](https://codehhr.coding.net/p/codehhr/d/kd/git/raw/master/mine/kd-IMG_20211207_073127-min.jpg)
 {% endgallery %}
-
-# The_End
