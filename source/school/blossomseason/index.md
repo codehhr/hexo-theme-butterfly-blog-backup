@@ -21,16 +21,14 @@ date: 2020-10-24 10:34:21
 ![IMG_20210403_155915](https://codehhr.coding.net/p/codehhr/d/kd/git/raw/master/blossomseason/IMG_20210403_155915.jpg)
 ![学校东面路上](https://codehhr.coding.net/p/codehhr/d/kd/git/raw/master/blossomseason/roadsideflower.jpg)
 
----
-
-![学校东面路上](https://codehhr.coding.net/p/codehhr/d/kd/git/raw/master/blossomseason/lake-cat.jpg)
-![学校东面路上](https://codehhr.coding.net/p/codehhr/d/kd/git/raw/master/blossomseason/library-lake.jpg)
-![学校东面路上](https://codehhr.coding.net/p/codehhr/d/kd/git/raw/master/blossomseason/love-flower.jpg)
-![学校东面路上](https://codehhr.coding.net/p/codehhr/d/kd/git/raw/master/blossomseason/love.jpg)
-![学校东面路上](https://codehhr.coding.net/p/codehhr/d/kd/git/raw/master/blossomseason/peacock.jpg)
-![学校东面路上](https://codehhr.coding.net/p/codehhr/d/kd/git/raw/master/blossomseason/pink-petal.jpg)
-![学校东面路上](https://codehhr.coding.net/p/codehhr/d/kd/git/raw/master/blossomseason/Thirdrrestaurant-flowerA.jpg)
-![学校东面路上](https://codehhr.coding.net/p/codehhr/d/kd/git/raw/master/blossomseason/Thirdrrestaurant-flowerB.jpg)
+![lake-cat](https://codehhr.coding.net/p/codehhr/d/kd/git/raw/master/blossomseason/lake-cat.jpg)
+![library-lake](https://codehhr.coding.net/p/codehhr/d/kd/git/raw/master/blossomseason/library-lake.jpg)
+![love-flower](https://codehhr.coding.net/p/codehhr/d/kd/git/raw/master/blossomseason/love-flower.jpg)
+![love](https://codehhr.coding.net/p/codehhr/d/kd/git/raw/master/blossomseason/love.jpg)
+![peacock](https://codehhr.coding.net/p/codehhr/d/kd/git/raw/master/blossomseason/peacock.jpg)
+![pink-petal](https://codehhr.coding.net/p/codehhr/d/kd/git/raw/master/blossomseason/pink-petal.jpg)
+![Thirdrrestaurant-flowerA)](https://codehhr.coding.net/p/codehhr/d/kd/git/raw/master/blossomseason/Thirdrrestaurant-flowerA.jpg)
+![Thirdrrestaurant-flowerB)](https://codehhr.coding.net/p/codehhr/d/kd/git/raw/master/blossomseason/Thirdrrestaurant-flowerB.jpg)
 {% endgallery %}
 
 # The_End
