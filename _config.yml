@@ -105,8 +105,8 @@ deploy:
   type: git
   repo:
     # coding: https://e.coding.net/codehhr/codehhr/codehhr.git
-    gitee: https://gitee.com/codehhr/codehhr.git
-    # github: https://github.com/codehhr/codehhr.github.io.git
+    # gitee: https://gitee.com/codehhr/codehhr.git
+    github: https://github.com/codehhr/codehhr.github.io.git
 branch: master
 
 aplayer:
