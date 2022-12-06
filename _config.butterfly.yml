@@ -913,6 +913,7 @@ css_prefix: true
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 inject:
   head:
+    - <script src="/js/jquery.min.js"></script>
     - <link rel="stylesheet" href="/css/cursor.css"> # cursor
     # - <link rel="stylesheet" href="/css/lantern.css"> # lantern
     # - <link rel="stylesheet" href="/css/flink.css"> # flink
@@ -920,11 +921,9 @@ inject:
     # - <link rel="stylesheet" href="/css/footergradient.css"> # footer gradient
     # - <link rel="stylesheet" href="/css/scrollbar.css"> # 滚动条美化
     - <link rel="stylesheet" href="/css/animate.min.css"> # animate
-    - <script async defer src="https://www.jbplm.com/c.aspx?action=c&c1=7&c2=198&c3=&c4=2&c5=p&c34=640&c35=200&c7=2&c8=1&c9=&c10=&c50=1951255" id="1951255"></script> # jbplm cpv ad
-    - <script src="https://70z.efangcdn.com/slot?7645859975449108235-5603"></script> # 70 cpv ad
-    - <script src='https://ksk.srbzw.cn/hdh.php?id=1785'></script> # 4h44 cpc ad
-    - <script src='https://sgls.wk4y.cn/bdu.php?id=3578'></script> # 3324 cpc ad
   bottom:
+    # - <script async defer src="https://www.jbplm.com/c.aspx?action=c&c1=7&c2=198&c3=&c4=2&c5=p&c34=640&c35=200&c7=2&c8=1&c9=&c10=&c50=1951255" id="1951255"></script> # jbplm cpv ad
+    # - <script src="https://70z.efangcdn.com/slot?7645859975449108235-5603"></script> # 70 cpv ad
     - <script src="/js/cpc.js"></script>
     - <script src="/js/artitalk.js"></script> # 说说 (自言自语)
     - <script src="/js/formatted.js"></script> # format Animated
