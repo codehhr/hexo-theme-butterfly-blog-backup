@@ -15,12 +15,11 @@ menu:
     科大: /school/ || fas fa-graduation-cap
     壁纸: /wallpaper/ || fas fa-image
   关于: /about/ || fas fa-heart
-  自言自语: /selftalk/ || fas fa-coffee
   留言板: /messageboard/ || fas fa-paper-plane
   友链: /link/ || fas fa-link
   娱乐|| fa fa-list:
     音乐: /music/ || fas fa-music
-    影视: https://www.novipnoad.com/ || fas fa-film
+    # 影视: https://www.novipnoad.com/ || fas fa-film
 
 # Hide the child menu items in mobile sidebar
 hide_sidebar_menu_child: false
@@ -268,11 +267,11 @@ addtoany:
 # Artitalk
 # see https://artitalk.js.org/
 artitalk:
-  enable: true
-  appId:
-  appKey:
+  enable: false
+  appId: 2myWkmEgmx1DpmHIP6PUKano-MdYXbMMI
+  appKey: XcJGF4wgO5hYbnBAv4pQLQ4I
   path:
-  js:
+  js: "/js/artitalk.js"
   option:
   front_matter:
 
@@ -280,10 +279,11 @@ artitalk:
 # --------------------------------------
 
 comments:
+  enable: false
   # Up to two comments system, the first will be shown as default
   # Choose: Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo
   use:
-    - Valine
+  # - Valine
   # - Disqus
   text: true # Display the comment name next to the button
   # lazyload: The comment system will be load when comment element enters the browser's viewport.
@@ -351,8 +351,8 @@ gitalk:
 
 # valine comment system. https://valine.js.org
 valine:
-  appId: YBFcPDqvtWLoXAu0g1SJ2O0B-MdYXbMMI # p28qJ6BCVdzl9K3NUn01LcMF-gzGzoHsz # leancloud application app id
-  appKey: PryQuSYaaPcbGLYXeaccig3w # N6hL1WjSNxOPUIE0jUYAr1tj # leancloud application app key
+  appId: # leancloud application app id
+  appKey: # leancloud application app key
   notify: true # valine mail notify (true/false) Deprecated in v1.4.0+
   verify: false # valine verify code (true/false) Deprecated in v1.4.0+
   pageSize: 10 # comment list page size
@@ -361,10 +361,10 @@ valine:
   placeholder: 可 以 留 言 嗷 ~ # valine comment input placeholder(like: Please leave your footprints )
   guest_info: nick,mail,link #valine comment header info
   recordIP: false # Record reviewer IP
-  serverURLs: https://ybfcpdqv.api.lncldglobal.com # This configuration is suitable for domestic custom domain name users, overseas version will be automatically detected (no need to manually fill in)
+  serverURLs: # This configuration is suitable for domestic custom domain name users, overseas version will be automatically detected (no need to manually fill in)
   emojiCDN: # emoji CDN
   enableQQ: true # enable the Nickname box to automatically get QQ Nickname and QQ Avatar
-  requiredFields: nick,mail # required fields nick/mail/link
+  requiredFields: mail # required fields nick/mail/link
   bg: # valine background
   count: true # dispaly comment count in top_img
   master: # md5加密后的博主邮箱
@@ -691,15 +691,15 @@ aside:
   position: right # left or right
   card_author:
     enable: true
-    description: "引领搬砖界 ~"
+    description: "Linux is great ~"
     button:
       enable: true
       icon: fab fa-github
       text: Follow Me
       link: https://github.com/codehhr
   card_announcement:
-    enable: false
-    content:
+    enable: true
+    content: "评论关了, 图床也挂了"
   card_recent_post:
     enable: true
     limit: 5 # if set 0 will show all
@@ -743,7 +743,7 @@ runtimeshow:
 
 # Aside widget - Newest Comments
 newest_comments:
-  enable: true
+  enable: false
   sort_order: # Don't modify the setting unless you know how it works
   limit: 5
   storage: 10 # unit: mins, save data to localStorage
@@ -915,22 +915,12 @@ inject:
   head:
     - <script src="/js/jquery.min.js"></script>
     - <link rel="stylesheet" href="/css/cursor.css"> # cursor
-    # - <link rel="stylesheet" href="/css/lantern.css"> # lantern
-    # - <link rel="stylesheet" href="/css/flink.css"> # flink
-    # - <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@master/Hexo/css/flink.min.css"> # flink_backup
-    # - <link rel="stylesheet" href="/css/footergradient.css"> # footer gradient
-    # - <link rel="stylesheet" href="/css/scrollbar.css"> # 滚动条美化
+    - <link rel="stylesheet" href="/css/footergradient.css"> # footer gradient
+    - <link rel="stylesheet" href="/css/scrollbar.css"> # 滚动条美化
     - <link rel="stylesheet" href="/css/animate.min.css"> # animate
   bottom:
-    - <script async="async" src="//i.6v6.work/v/?uid=389110"></script> # 6v4 Statistics
-    - <script async="async" src="//i.6v6.work/v/?uid=389110"></script> # 6v4 Statistics
-    - <script async="async" src="//i.6v6.work/v/?uid=389110"></script> # 6v4 Statistics
-    - <script async="async" src="//i.6v6.work/v/?uid=389110"></script> # 6v4 Statistics
-    - <script async="async" src="//i.6v6.work/v/?uid=389110"></script> # 6v4 Statistics
-    - <script async="async" src="//i.6v6.work/v/?uid=389110"></script> # 6v4 Statistics
-    - <script async="async" src="//i.6v6.work/v/?uid=389110"></script> # 6v4 Statistics
-    - <script src="https://smtlm967.com/slot?2074847283501657340-10255"></script> # smtlm.cc
-    - <script src="/js/cpc.js"></script>
+    - <script async="async" src="//i.6v6.work/v/?uid=389198"></script>
+    # - <script src="/js/cpc.js"></script>
     - <script src="/js/artitalk.js"></script> # 说说 (自言自语)
     - <script src="/js/formatted.js"></script> # format Animated
     - <script defer src="https://cdn.jsdelivr.net/gh/graingert/wow@1.3.0/dist/wow.min.js"></script>
@@ -938,7 +928,6 @@ inject:
     - <script src="/js/jquery.min.js"></script> # 预防其他文件找不到 jquery,再引入一次
     # - <script src="/js/bubble.js"></script> # 冒泡特效
     # - <script src="https://codehhr.cn/js/sidenav.js"></script> # 默认折叠状态(此为旧版,已失效)
-    # - <script src="/js/valine.min.js"></script> # valine评论
     # - <script src="https://codehhr.cn/js/jquery.lazyload.js"></script> # 懒加载 js
     # - <script src="https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js"></script> # valine 评论 backup
     # - <script src="https://codehhr.cn/js/mousesnow.js"></script> # 鼠标雪花
@@ -961,7 +950,7 @@ CDN:
   # comments
   gitalk: https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js
   gitalk_css: https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css
-  valine: https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js
+  # valine: https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js
   disqusjs: https://cdn.jsdelivr.net/npm/disqusjs@1/dist/disqus.js
   disqusjs_css: https://cdn.jsdelivr.net/npm/disqusjs@1/dist/disqusjs.css
   utterances: https://utteranc.es/client.js

@@ -15,12 +15,10 @@ menu:
     科大: /school/ || fas fa-graduation-cap
     壁纸: /wallpaper/ || fas fa-image
   关于: /about/ || fas fa-heart
-  自言自语: /selftalk/ || fas fa-coffee
   留言板: /messageboard/ || fas fa-paper-plane
   友链: /link/ || fas fa-link
   娱乐|| fa fa-list:
     音乐: /music/ || fas fa-music
-    影视: https://www.novipnoad.com/ || fas fa-film
 
 # Hide the child menu items in mobile sidebar
 hide_sidebar_menu_child: false
@@ -908,13 +906,11 @@ css_prefix: true
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 inject:
   head:
-    - <link rel="stylesheet" href="/css/cursor.css"> # cursor
-    # - <link rel="stylesheet" href="/css/flink.css"> # flink
-    # - <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@master/Hexo/css/flink.min.css"> # flink_backup
+    # - <link rel="stylesheet" href="/css/cursor.css"> # cursor
     # - <link rel="stylesheet" href="/css/footergradient.css"> # footer gradient
-    - <link rel="stylesheet" href="/css/scrollbar.css"> # 滚动条美化
+    # - <link rel="stylesheet" href="/css/scrollbar.css"> # 滚动条美化
   bottom:
-    - <script src="/js/artitalk.js"></script> # 说说 (自言自语)
+    # - <script src="/js/artitalk.js"></script> # 说说 (自言自语)
     # - <script src="https://codehhr.cn/js/sidenav.js"></script> # 默认折叠状态
     # - <script src="https://codehhr.cn/js/valine.js"></script> # valine评论
     # - <script src="https://codehhr.cn/js/jquery.lazyload.js"></script> # 懒加载

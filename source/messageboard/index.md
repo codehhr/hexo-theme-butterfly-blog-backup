@@ -5,4 +5,4 @@ top_img: https://codehhr.coding.net/p/codehhr/d/wallpaper/git/raw/master/desktop
 type: messageboard
 ---
 
-## 可 以 留 言 嗷 ~
+# 评论功能关了, 评论个鸡毛, 直接发邮箱吧
