@@ -9,7 +9,7 @@ description: "hexo,butterfly,linux,codehhr,Saturday,Saturday_,i3wm,manjaro,archl
 keywords: "hexo,butterfly,linux,codehhr,Saturday,Saturday_,i3wm,manjaro,archlinux,前端,web,html,css,js,jquery,node,git,vue,vuex,微信小程序,然哥saturday玩linux,科大,butterfly,hexo,github,gitee,coding,开源永远的神"
 author: HHR
 language: zh-CN
-timezone: ""
+# timezone: ""
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -90,9 +90,9 @@ pagination_dir: page
 
 # Include / Exclude file(s)
 ## include:/exclude: options only apply to the 'source/' folder
-include:
-exclude:
-ignore:
+# include:
+# exclude:
+# ignore:
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
@@ -105,8 +105,8 @@ deploy:
   type: git
   repo:
     # coding: https://e.coding.net/codehhr/codehhr/codehhr.git
-    # gitee: https://gitee.com/codehhr/codehhr.git
-    github: https://github.com/codehhr/codehhr.github.io.git
+    gitee: https://gitee.com/codehhr/codehhr.git
+    # github: https://github.com/codehhr/codehhr.github.io.git
 branch: master
 
 aplayer:
@@ -144,11 +144,7 @@ live2d:
     opacityDefault: 0.6
     opacityOnHover: 0.8
 
-# Github 贡献度
-# Ice Kano Plus_in
-# Hexo Github Canlendar
-# Author: Ice Kano
-# Modify: Lete乐特
+# Github Canlendar
 githubcalendar:
   enable: false
   enable_page: /

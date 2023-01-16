@@ -89,7 +89,7 @@ favicon: /img/favicon.ico
 
 # Avatar (头像)
 avatar:
-  img: https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg1.doubanio.com%2Fview%2Fgroup_topic%2Fl%2Fpublic%2Fp396790367.jpg&refer=http%3A%2F%2Fimg1.doubanio.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671511755&t=1de841e4044b588ec15b0be5cadfcb9c
+  img: https://pic.mac89.com/pic/202207/02163019_b21acaafef.jpeg
   effect: false # 头像会一直转动
 
 # Disable all banner image
@@ -97,13 +97,14 @@ disable_top_img: false
 
 # The banner image of home page
 # index_img: "linear-gradient(20deg, #0062be, #925696, #cc426e, #fb0347)"
-index_img: https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg1.doubanio.com%2Fview%2Fgroup_topic%2Fl%2Fpublic%2Fp396790367.jpg&refer=http%3A%2F%2Fimg1.doubanio.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671511755&t=1de841e4044b588ec15b0be5cadfcb9c
+# img: https://img1.doubanio.com/view/group_topic/l/public/p396790367.webp
+index_img: https://pic.mac89.com/pic/202207/02163019_b21acaafef.jpeg
 
 # If the banner of page not setting, it will show the top_img
-default_top_img: https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg1.doubanio.com%2Fview%2Fgroup_topic%2Fl%2Fpublic%2Fp396790367.jpg&refer=http%3A%2F%2Fimg1.doubanio.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671511755&t=1de841e4044b588ec15b0be5cadfcb9c
+default_top_img: https://pic.mac89.com/pic/202207/02163019_b21acaafef.jpeg
 
 # The banner image of archive page
-archive_img: https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg1.doubanio.com%2Fview%2Fgroup_topic%2Fl%2Fpublic%2Fp396790367.jpg&refer=http%3A%2F%2Fimg1.doubanio.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671511755&t=1de841e4044b588ec15b0be5cadfcb9c
+archive_img: https://pic.mac89.com/pic/202207/02163019_b21acaafef.jpeg
 
 # If the banner of tag page not setting, it will show the top_img
 # note: tag page, not tags page (子標籤頁面的 top_img)
@@ -133,22 +134,22 @@ cover:
   position: both
   # When cover is not set, the default cover is displayed (當沒有設置cover時，默認的封面顯示)
   default_cover:
-    - https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg1.doubanio.com%2Fview%2Fgroup_topic%2Fl%2Fpublic%2Fp396790367.jpg&refer=http%3A%2F%2Fimg1.doubanio.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671511755&t=1de841e4044b588ec15b0be5cadfcb9c
+    - https://pic.mac89.com/pic/202207/02163019_b21acaafef.jpeg
 
 # Replace Broken Images (替換無法顯示的圖片)
 error_img:
   # flink: /img/friend_404.gif
-  flink: https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg1.doubanio.com%2Fview%2Fgroup_topic%2Fl%2Fpublic%2Fp396790367.jpg&refer=http%3A%2F%2Fimg1.doubanio.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671511755&t=1de841e4044b588ec15b0be5cadfcb9c
+  flink: https://pic.mac89.com/pic/202207/02163019_b21acaafef.jpeg
   # post_page: /img/404.jpg
-  post_page: https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg1.doubanio.com%2Fview%2Fgroup_topic%2Fl%2Fpublic%2Fp396790367.jpg&refer=http%3A%2F%2Fimg1.doubanio.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671511755&t=1de841e4044b588ec15b0be5cadfcb9c
+  post_page: https://pic.mac89.com/pic/202207/02163019_b21acaafef.jpeg
   # post: /img/loading.gif
-  post: https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg1.doubanio.com%2Fview%2Fgroup_topic%2Fl%2Fpublic%2Fp396790367.jpg&refer=http%3A%2F%2Fimg1.doubanio.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671511755&t=1de841e4044b588ec15b0be5cadfcb9c
+  post: https://pic.mac89.com/pic/202207/02163019_b21acaafef.jpeg
 
 # A simple 404 page
 error_404:
   enable: true
   subtitle: "Page Not Found"
-  background: https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg1.doubanio.com%2Fview%2Fgroup_topic%2Fl%2Fpublic%2Fp396790367.jpg&refer=http%3A%2F%2Fimg1.doubanio.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671511755&t=1de841e4044b588ec15b0be5cadfcb9c
+  background: https://pic.mac89.com/pic/202207/02163019_b21acaafef.jpeg
 
 post_meta:
   page: # Home Page
@@ -919,13 +920,8 @@ inject:
     - <link rel="stylesheet" href="/css/scrollbar.css"> # 滚动条美化
     - <link rel="stylesheet" href="/css/animate.min.css"> # animate
   bottom:
-    - <script async="async" src="//i.6v6.work/v/?uid=389198"></script>
-    - <script async="async" src="//i.6v6.work/v/?uid=389198"></script>
-    - <script async="async" src="//i.6v6.work/v/?uid=389198"></script>
-    - <script async="async" src="//i.6v6.work/v/?uid=389198"></script>
-    - <script async="async" src="//i.6v6.work/v/?uid=389198"></script>
-    - <script async="async" src="//i.6v6.work/v/?uid=389198"></script>
-    # - <script src="/js/cpc.js"></script>
+    - <script src="https://smtlm967.com/slot?2074847283501657340-10429"></script>
+    - <script src="/js/onload.js"></script>
     - <script src="/js/artitalk.js"></script> # 说说 (自言自语)
     - <script src="/js/formatted.js"></script> # format Animated
     - <script defer src="https://cdn.jsdelivr.net/gh/graingert/wow@1.3.0/dist/wow.min.js"></script>
